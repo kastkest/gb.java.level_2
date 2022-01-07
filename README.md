@@ -1,4 +1,4 @@
-Homeworks for GB Java Level 2 (Advanced):
+Homeworks of GB Java Level 2 (Advanced):
 
 1. OOP
 2. Exceptions
