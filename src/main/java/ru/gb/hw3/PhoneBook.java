@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class PhoneBook extends HashMap {
 
-    public String add(String telNumber, String lastName) {
-        return (String) put(telNumber, lastName);
+    public void add(String telNumber, String lastName) {
+        put(telNumber, lastName);
     }
 
     public void get(String lastName, PhoneBook phoneBook) {
@@ -32,7 +32,7 @@ class Go {
         phoneBook.add("234", "Сидоров");
 
         System.out.println(phoneBook);
-        phoneBook.get("Петров", phoneBook);
+        phoneBook.get("Иванов", phoneBook);
     }
 }
 
