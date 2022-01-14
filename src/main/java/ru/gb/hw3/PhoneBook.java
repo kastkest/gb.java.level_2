@@ -9,11 +9,15 @@ public class PhoneBook extends HashMap {
     }
 
     public void get(String lastName, PhoneBook phoneBook) {
-        System.out.println("По фамилии " + lastName + " в телефонной книге есть следующие номера:");
-        for (Object telNumber : phoneBook.keySet()) {
-            if (lastName == phoneBook.get(telNumber)) {
-                System.out.println(telNumber);
+        if (phoneBook.containsValue(lastName)) {
+            System.out.println("По фамилии " + lastName + " в телефонной книге есть следующие номера:");
+            for (Object telNumber : phoneBook.keySet()) {
+                if (lastName == phoneBook.get(telNumber)) {
+                    System.out.println(telNumber);
+                }
             }
+        } else {
+            System.out.println("Фамилии " + lastName + " нет в справочнике.");
         }
     }
 }
@@ -28,7 +32,7 @@ class Go {
         phoneBook.add("234", "Сидоров");
 
         System.out.println(phoneBook);
-        phoneBook.get("Сидоров", phoneBook);
+        phoneBook.get("Петров", phoneBook);
     }
 }
 
