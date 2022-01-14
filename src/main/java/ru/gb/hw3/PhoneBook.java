@@ -18,7 +18,7 @@ public class PhoneBook extends HashMap {
     }
 }
 
-class go {
+class Go {
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("135", "Иванов");
