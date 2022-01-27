@@ -20,17 +20,12 @@ public class EchoClient {
     public EchoClient() {
         start();
         Scanner scanner = new Scanner(System.in);
-        String str = scanner.nextLine();
+
         while (true) {
-            if ("/end".equalsIgnoreCase(str)) {
-                closeConnection();
-                break;
-            } else {
-                try {
-                    out.writeUTF(str);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                out.writeUTF(scanner.nextLine());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -46,11 +41,11 @@ public class EchoClient {
                 try {
                     while (true) {
                         String message = in.readUTF();
+                        System.out.println("Получено сообщение от сервера: " + message);
                         if ("/end".equalsIgnoreCase(message)) {
                             closeConnection();
                             break;
                         }
-                        System.out.println(message);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
